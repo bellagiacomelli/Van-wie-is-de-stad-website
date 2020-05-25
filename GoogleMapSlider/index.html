@@ -81,6 +81,12 @@
       
     });
 
+    // When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+
   </script>
 
 </head>
@@ -217,7 +223,9 @@
   <br>
   <a href="https://apps.apple.com/nl/app/google-earth/id293622097" target="_blank" class="bmd-modalButton" ata-toggle="modal">Open tour on Google Earth browser</a>
   <br>
-  <a href="https://apps.apple.com/nl/app/google-earth/id293622097" target="_blank" class="bmd-modalButton" ata-toggle="modal">Info</a> 
+<div class="popup" onclick="myFunction()">Info
+  <span class="popuptext bmd-modalButton" id="myPopup" target="_blank" class="bmd-modalButton" ata-toggle="modal"></span>
+</div>
 
 	</div>
 	
