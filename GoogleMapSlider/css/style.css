@@ -107,6 +107,7 @@ iframe {
 /* Popup arrow */
 .popup .popuptext::after {
   content: "";
+  padding: 30px;
   position: absolute;
   top: 100%;
   left: 50%;
