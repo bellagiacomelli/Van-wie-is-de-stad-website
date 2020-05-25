@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<head>
+  
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	
+	<title>Van wie is de stad?</title>
+	
+	<link rel='stylesheet' type='text/css' href='css/style.css' />
+  	
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+  <script type='text/javascript' src='js/example.js'></script>
+  <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=true'></script>
+  
+  <script type='text/javascript'>
+  
+    $(function() {
+    
+      var chicago = new google.maps.LatLng(52.37912, 4.90027),
+          pointToMoveTo, 
+          first = true,
+          curMarker = new google.maps.Marker({}),
+          $el;
+      
+      var myOptions = {
+          zoom: 10,
+          center: chicago,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+      
+      var map = new google.maps.Map($("#map_canvas")[0], myOptions);
+    
+      $("#locations li").mouseenter(function() {
+      
+        $el = $(this);
+                
+        if (!$el.hasClass("hover")) {
+        
+          $("#locations li").removeClass("hover");
+          $el.addClass("hover");
+        
+          if (!first) { 
+            
+            // Clear current marker
+            curMarker.setMap(); 
+            
+            // Set zoom back to Chicago level
+            // map.setZoom(10);
+          }
+          
+          // Move (pan) map to new location
+          pointToMoveTo = new google.maps.LatLng($el.attr("data-geo-lat"), $el.attr("data-geo-long"));
+          map.panTo(pointToMoveTo);
+          
+          // Add new marker
+          curMarker = new google.maps.Marker({
+              position: pointToMoveTo,
+              map: map,
+              icon: "images/marker.png"
+          });
+          
+          // On click, zoom map
+          google.maps.event.addListener(curMarker, 'click', function() {
+             map.setZoom(14);
+          });
+          
+          // Fill more info area
+          $("#more-info")
+            .find("h2")
+              .html($el.find("h3").html())
+              .end()
+            .find("p")
+              .html($el.find(".longdesc").html());
+          
+          // No longer the first time through (re: marker clearing)        
+          first = false; 
+        }
+        
+      });
+      
+      $("#locations li:first").trigger("mouseenter");
+      
+    });
+
+  </script>
+
+</head>
+
+<body>
+
+	<div id="page-wrap">
+	
+	   <iframe width="5%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&autoplay=1&feed=%2Fisabella-rosa-giacomelli%2Fvan-wie-is-de-stad%2F" frameborder="0" allow="autoplay"></iframe><h1><i>De stad is van ons</i> De stad was van ons<br>De stad weer van ons <i>Van wie is de stad?</i></h1>
+     <br>
+	   
+	   <ul id="locations">
+	   
+        <li data-geo-lat="52.37912" data-geo-long="4.90027">
+          <h3>Start</h3>
+          <p>Amsterdam Central Station</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+        
+        <li data-geo-lat="52.37659" data-geo-long="4.89939">
+          <h3>Dwaze zaken</h3>
+          <p>Coffee Break</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+        
+        <li data-geo-lat="52.37531" data-geo-long="4.90025">
+          <h3>Ramsbrug</h3>
+          <p>Ex-Squatters Building</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+        
+        <li data-geo-lat="52.36594" data-geo-long="4.9125">
+          <h3>Taste-Coffee to Walk</h3>
+          <p>Coffee Break</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.35926" data-geo-long="4.9252">
+          <h3>Tweede Oosterparkstraat 322</h3>
+          <p>Ex-Squatters Building</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.35804" data-geo-long="4.91029">
+          <h3>Coffeecompany</h3>
+          <p>Coffee Break</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.36134" data-geo-long="4.88705">
+          <h3>Weteringschans 81</h3>
+          <p>Ex-Squatters Building</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.36105" data-geo-long="4.88857">
+          <h3>Back to Black</h3>
+          <p>Coffee Break</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.35994" data-geo-long="4.88262">
+          <h3>Jan Luijkenstraat 3</h3>
+          <p>Ex-Squatters Building</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.36367" data-geo-long="4.88344">
+          <h3>Cafe in the City</h3>
+          <p>Coffee Break</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.37215" data-geo-long="4.88445">
+          <h3>Keizersgracht 242-252</h3>
+          <p>Ex-Squatters Building</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.37948" data-geo-long="4.88064">
+          <h3>Moods Coffee Corner</h3>
+          <p>Coffee Break</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.38426" data-geo-long="4.8761">
+          <h3>Van Hogendorpstraat 20</h3>
+          <p>Ex-Squatters Building</p>
+          <p class="longdesc"><strong></strong></p>
+        </li>
+
+        <li data-geo-lat="52.38426" data-geo-long="4.8761">
+          <h3>End</h3>
+          <p>Amsterdam Central Station</p>
+          <p class="longdesc"><strong>Random review:</strong>info</p>
+        </li>
+
+
+
+
+
+
+
+        
+     </ul>
+
+     <div id="map_canvas"></div>
+     
+     <div id="more-info"><div>
+     
+
+        <h2>More Info</h2>
+        <p>Hover over location on the left. (JavaScript must be enabled)</p>
+     
+     </div></div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>  	
+<div class="buttons"> 
+  <a href="https://earth.google.com/earth/rpc/cc/drive?state=%7B%22ids%22%3A%5B%221c5qdG6iCAPMCld8fACgeeBU-aYJKLXgF%22%5D%2C%22action%22%3A%22open%22%2C%22userId%22%3A%22115075628040036925173%22%7D&usp=sharing" target="_blank" class="bmd-modalButton" ata-toggle="modal">Open tour on Google Earth App</a>
+  <br>
+  <a href="https://apps.apple.com/nl/app/google-earth/id293622097" target="_blank" class="bmd-modalButton" ata-toggle="modal">Open tour on Google Earth browser</a>
+  <br>
+  <a href="https://apps.apple.com/nl/app/google-earth/id293622097" target="_blank" class="bmd-modalButton" ata-toggle="modal">Info</a> 
+
+	</div>
+	
+</body>
+
+
+</html>
