@@ -22,7 +22,7 @@ menu, nav, section { display: block; }
 #page-wrap { width: 1500px; margin: 20px auto; }
 #map_canvas { width: 50%; height: 720px; width: 900px; float: left; position: relative; z-index: 10 !important; border-radius: 500px; border: 3px solid white;}
 
-h1 { text-align: center; margin: 0 0 5px 0; font: normal 60px Helvetica, Arial, Sans-Serif; letter-spacing: 0.1px; }
+h1 { text-align: center; margin: 0 0 5px 0; font: normal 60px Helvetica, Arial, Sans-Serif; letter-spacing: 0.1px; line-height: 40pt;}
 h2 { margin: 0 0 5px 0; font: normal 60px Helvetica, Arial, Sans-Serif; letter-spacing: 0.1px; text-shadow: 0 1px 0px rgba(255,255,255,0.3); }
 h3 { margin: 0 0  1px 0; font: normal 18px Helvetica, Arial, Sans-Serif; letter-spacing: 0.1px; }
 
@@ -35,8 +35,8 @@ h3 { margin: 0 0  1px 0; font: normal 18px Helvetica, Arial, Sans-Serif; letter-
 
 #content { width: 300px; }
 
-#more-info { width: 50px; float: left; background: none; padding: 20px; height: 300px;}
-#more-info * { position: relative; z-index: 10; }
+#more-info { width: 280px; float: left; background: none; padding: 20px; height: 300px; overflow: hidden; word-wrap:break-word; hyphens: auto;}
+#more-info * { position: relative; text-overflow: ellipsis;}
 /*#more-info > div { background: yellow; -moz-box-shadow: 0 0 14px rgba(70,49,1,0.5); -webkit-box-shadow: 0 0 14px rgba(70,49,1,0.5); padding: 20px; height: 320px; }
 */.longdesc { display: none; }
 
@@ -56,7 +56,8 @@ h3 { margin: 0 0  1px 0; font: normal 18px Helvetica, Arial, Sans-Serif; letter-
   text-decoration:none;
   text-align: center;
   margin-left: 70px;
-  margin-top: 40px;
+  margin-top: 0px;
+  margin-bottom: 5px;
 }
 
 .buttons {
@@ -92,7 +93,7 @@ iframe {
   text-decoration:none;
   text-align: center;
   margin-left: 70px;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 /* The actual popup */
@@ -106,8 +107,8 @@ iframe {
   border-radius: 150px;
   padding: 40px 50px;
   position: absolute;
-  z-index: 1;
-  bottom: 125%;
+  z-index: 1 !important;
+  bottom: 100%;
   left: 20%;
   margin-left: -80px;
   font-size: 18px;
