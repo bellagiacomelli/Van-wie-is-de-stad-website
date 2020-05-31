@@ -8,10 +8,13 @@
 	<link rel='stylesheet' type='text/css' href='css/style.css' />
   	
   <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
-  <script type='text/javascript' src='js/example.js'></script>
   <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=true'></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSxVAGDNZigWTyU_COhwv4BjUGQ7wGPX0&callback=myMap"></script>
   
   <script type='text/javascript'>
+
+
   
     $(function() {
     
@@ -22,7 +25,7 @@
           $el;
       
       var myOptions = {
-          zoom: 10,
+          zoom: 17,
           center: chicago,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
@@ -60,7 +63,7 @@
           
           // On click, zoom map
           google.maps.event.addListener(curMarker, 'click', function() {
-             map.setZoom(30);
+             map.setZoom(10);
           });
           
           // Fill more info area
@@ -224,7 +227,17 @@ function myFunction() {
   <a href="https://apps.apple.com/nl/app/google-earth/id293622097" target="_blank" class="bmd-modalButton" ata-toggle="modal">Open tour on Google Earth browser</a>
   <br>
 <div class="popup" onclick="myFunction()">Info
-  <span class="popuptext bmd-modalButton" id="myPopup" target="_blank" class="bmd-modalButton" ata-toggle="modal">What happend to Amsterdam in the time from the squatters movement around 1980 and right now in 2020?  What are the area's around the squattersplaces (mentioned in the tapes) like right now</span>
+  <span class="popuptext bmd-modalButton" id="myPopup" target="_blank" class="bmd-modalButton" ata-toggle="modal">
+<h3>
+  Interviews with 28 former squatters and squatters, 1996.
+  Recorded in ex-squatters buildings and saved on cassette tapes. 
+</h3>
+<br>
+<br>
+Renewal comes from fringes, the squatters movement gave a lot to Amsterdam as a city. But what happend to Amsterdam between the squatting times circulating around 1975 and our current 2020.
+<br>
+<br>
+Welcome to Amsterdam from the squatters movement, in 2020. This guided audiotour is an walking experience that will introduce you to the world of squatters while walking in a nowadays modern capital city. Including ex-squatters buildings, trendy coffee breaks, impingement poems, contradicting audio and steps on your pedometer.</span>
 </div>
 
 	</div>
